@@ -1,11 +1,10 @@
 import pygame
 
-from dino_runner.utils.constants import RUNNING, JUMPING
+from dino_runner.utils.constants import RUNNING, JUMPING, DEAD
 
 X_POS = 80
 Y_POS = 220
 JUMP_VEL = 8.5
-
 
 class Dinosaur:
     def __init__(self):
@@ -18,6 +17,7 @@ class Dinosaur:
         self.step_index = 0
         self.dino_run = True
         self.dino_jump = False
+        self.is_dead = False
 
     def run(self):
         self.image = RUNNING[0] if self.step_index < 5 else RUNNING[1]
@@ -40,21 +40,28 @@ class Dinosaur:
     def duck(self):
         pass
 
-    def update(self, user_input):
-        if self.dino_run:
-            self.run()
-        elif self.dino_jump:
-            self.jump()
+    def dead(self):
+        self.image = DEAD
 
-        if not self.dino_jump and user_input[pygame.K_UP] or user_input[pygame.K_SPACE]:
-            self.dino_jump = True
-            self.dino_run = False
-        elif not self.dino_jump:
-            self.dino_jump = False
-            self.dino_run = True
+    def update(self, user_input, rect_enemy):
+        if self.is_dead:
+            self.dead()
+        else:
 
-        if self.step_index >= 10:
-            self.step_index = 0
+            if self.dino_run:
+                self.run()
+            elif self.dino_jump:
+                self.jump()
+
+            if not self.dino_jump and user_input[pygame.K_UP] or user_input[pygame.K_SPACE]:
+                self.dino_jump = True
+                self.dino_run = False
+            elif not self.dino_jump:
+                self.dino_jump = False
+                self.dino_run = True
+
+            if self.step_index >= 10:
+                self.step_index = 0
 
     def draw(self, screen):
         screen.blit(self.image, (self.dino_rect.x, self.dino_rect.y))

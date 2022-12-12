@@ -4,6 +4,8 @@ import pygame
 
 # Global constants
 TITLE = "Chrome Dino Runner"
+FONT_SIZE = 18
+FONT_FAMILY = 'Arial'
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
 FPS = 30
@@ -25,6 +27,7 @@ RUNNING_HAMMER = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/Run/DinoRunHammer1.png")),
     pygame.image.load(os.path.join(IMG_DIR, "Dino/Run/DinoRunHammer2.png")),
 ]
+DEAD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png"))
 
 # Duck
 DUCKING = [
@@ -74,5 +77,6 @@ HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Other/Hammer.png"))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, "Other/Track.png"))
 HEART = pygame.image.load(os.path.join(IMG_DIR, "Other/SmallHeart.png"))
+GAMEOVER = pygame.image.load(os.path.join(IMG_DIR, "Other/GameOver.png"))
 
 DEFAULT_TYPE = "default"
