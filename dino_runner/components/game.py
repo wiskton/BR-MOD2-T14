@@ -1,6 +1,6 @@
 import pygame
 
-from dino_runner.constants import (
+from dino_runner.utils.constants import (
     BG,
     FPS,
     ICON,
