@@ -4,11 +4,17 @@ import pygame
 
 # Global constants
 TITLE = "Chrome Dino Runner"
-FONT_SIZE = 18
-FONT_FAMILY = 'Arial'
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
 FPS = 30
+HARD_LVL_GAME = 4
+GAME_SPEED = 20
+
+FONT_SIZE = 22
+FONT_FAMILY = 'freesansbold.ttf'
+COLOR_BLACK = (0, 0, 0)
+COLOR_WHITE = (255, 255, 255)
+
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # Assets constants
