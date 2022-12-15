@@ -79,6 +79,9 @@ CLOUD = pygame.image.load(os.path.join(IMG_DIR, "Other/Cloud.png"))
 
 # Power ups
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Other/Shield.png"))
+
+SHIELD_TYPE = "shield"
+
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Other/Hammer.png"))
 
 BG = pygame.image.load(os.path.join(IMG_DIR, "Other/Track.png"))
